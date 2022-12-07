@@ -13,6 +13,10 @@
 		ED274151293E777E00FFD9CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED27414F293E777E00FFD9CF /* Main.storyboard */; };
 		ED274153293E778100FFD9CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED274152293E778100FFD9CF /* Assets.xcassets */; };
 		ED274156293E778100FFD9CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED274154293E778100FFD9CF /* LaunchScreen.storyboard */; };
+		ED27415E293E77BE00FFD9CF /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27415D293E77BE00FFD9CF /* NewsModel.swift */; };
+		ED274161293E77F000FFD9CF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED27415F293E77F000FFD9CF /* TableViewCell.swift */; };
+		ED274162293E77F000FFD9CF /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED274160293E77F000FFD9CF /* TableViewCell.xib */; };
+		EDCF3BE52940C9E800FB7061 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = EDCF3BE42940C9E800FB7061 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		ED274152293E778100FFD9CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED274155293E778100FFD9CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ED274157293E778100FFD9CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED27415D293E77BE00FFD9CF /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		ED27415F293E77F000FFD9CF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ED274160293E77F000FFD9CF /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCF3BE52940C9E800FB7061 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +64,42 @@
 		ED274148293E777E00FFD9CF /* TRNewsAPICallApp */ = {
 			isa = PBXGroup;
 			children = (
-				ED274149293E777E00FFD9CF /* AppDelegate.swift */,
-				ED27414B293E777E00FFD9CF /* SceneDelegate.swift */,
-				ED27414D293E777E00FFD9CF /* ViewController.swift */,
-				ED27414F293E777E00FFD9CF /* Main.storyboard */,
-				ED274152293E778100FFD9CF /* Assets.xcassets */,
-				ED274154293E778100FFD9CF /* LaunchScreen.storyboard */,
+				EDCF3BE62940D63A00FB7061 /* Controllers */,
+				EDCF3BE72940D64D00FB7061 /* View */,
+				EDCF3BE82940D65800FB7061 /* Model */,
 				ED274157293E778100FFD9CF /* Info.plist */,
 			);
 			path = TRNewsAPICallApp;
+			sourceTree = "<group>";
+		};
+		EDCF3BE62940D63A00FB7061 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				ED274149293E777E00FFD9CF /* AppDelegate.swift */,
+				ED27414B293E777E00FFD9CF /* SceneDelegate.swift */,
+				ED27415F293E77F000FFD9CF /* TableViewCell.swift */,
+				ED27414D293E777E00FFD9CF /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EDCF3BE72940D64D00FB7061 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ED274160293E77F000FFD9CF /* TableViewCell.xib */,
+				ED27414F293E777E00FFD9CF /* Main.storyboard */,
+				ED274154293E778100FFD9CF /* LaunchScreen.storyboard */,
+				ED274152293E778100FFD9CF /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EDCF3BE82940D65800FB7061 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED27415D293E77BE00FFD9CF /* NewsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +118,9 @@
 			dependencies = (
 			);
 			name = TRNewsAPICallApp;
+			packageProductDependencies = (
+				EDCF3BE42940C9E800FB7061 /* SDWebImage */,
+			);
 			productName = TRNewsAPICallApp;
 			productReference = ED274146293E777E00FFD9CF /* TRNewsAPICallApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +149,9 @@
 				Base,
 			);
 			mainGroup = ED27413D293E777E00FFD9CF;
+			packageReferences = (
+				EDCF3BE32940C9E800FB7061 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = ED274147293E777E00FFD9CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED274156293E778100FFD9CF /* LaunchScreen.storyboard in Resources */,
+				ED274162293E77F000FFD9CF /* TableViewCell.xib in Resources */,
 				ED274153293E778100FFD9CF /* Assets.xcassets in Resources */,
 				ED274151293E777E00FFD9CF /* Main.storyboard in Resources */,
 			);
@@ -138,9 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED274161293E77F000FFD9CF /* TableViewCell.swift in Sources */,
 				ED27414E293E777E00FFD9CF /* ViewController.swift in Sources */,
 				ED27414A293E777E00FFD9CF /* AppDelegate.swift in Sources */,
 				ED27414C293E777E00FFD9CF /* SceneDelegate.swift in Sources */,
+				ED27415E293E77BE00FFD9CF /* NewsModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDCF3BE32940C9E800FB7061 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDCF3BE42940C9E800FB7061 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDCF3BE32940C9E800FB7061 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED27413E293E777E00FFD9CF /* Project object */;
 }

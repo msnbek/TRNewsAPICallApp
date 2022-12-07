@@ -5,28 +5,6 @@
 //  Created by Mahmut Senbek on 5.12.2022.
 //
 import SDWebImage
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
-
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -48,6 +26,8 @@ class ViewController: UIViewController {
 
 
 }
+
+//MARK: - TableView
 extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -73,9 +53,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         let goToUrl = articleArray[indexPath.row].url
         UIApplication.shared.open(URL(string: goToUrl)!)
     }
-        
-        
-        
+  
     }
 
     
@@ -98,9 +76,7 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
                         let articles = result.articles
                         let author = articles
                         self.articleArray = author
-                      
                      //   print(author)
-                        
                        // print(data as Any)
                         print("success")
                         DispatchQueue.main.async {
@@ -114,22 +90,34 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
                     
                     
                 }
-     
-                
+        
             }
             task.resume()
-            
-            
-        }
         
-        
-        func getImage() {
-            
-            let image = response?.urlToImage
-            
-            
-            
         }
+    
     }
     
+/*
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { [weak self] in
+                self?.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
+    }
+}
 
+*/
